@@ -1,0 +1,33 @@
+Dockerfile
+
+FROM node:alpine
+COPY . /folder_name
+CMD node /folder_name/index.js
+
+
+
+index.js
+
+console.log('Dhananjay')
+console.log('35036')
+
+
+
+COMMANDS
+
+add docker extension in vs code
+first crate a file with all lower case 
+then create a 'Dockerfile' in it. Name must be exact 
+write 
+	FROM node:alpine
+	COPY . /partb
+	CMD node.partb/index.js 
+
+then create a file with .js extension(here index.js) 
+write code in it 
+then open terminal 
+docker -version     //give docker version 
+node file_name.js      (here index.js)        //it will read contents of file 
+(docker build -t folder_name .)         (here partb)     //it will build image of file
+docker images            //it will show images 
+docker ps               // it will show container

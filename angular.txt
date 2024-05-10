@@ -1,0 +1,90 @@
+app.component.html
+
+
+
+
+
+<div style="max-width: 500px; border-radius: 10px; border: 1px solid black; margin:0 auto; padding: 30px;">
+  <h1 style="text-align: center;">{{title}}</h1>
+
+  <div style="margin-right: 30px;">
+    <input style="width: 100%; margin: 5px; padding: 10px;" type="text" placeholder="Enter your Name" #name name="Name" >
+    
+    <input style="width: 100%; margin: 5px; padding: 10px; " type="email" placeholder="Enter your email" #email name="email" >
+    <input style="width: 100%; margin: 5px; padding: 10px" type="password" placeholder="Enter your password" #password name="password" >
+    <input  style="width: 100%; margin: 5px; padding: 10px" type="text" placeholder="Enter your contact" #contact name="contact" >
+    <div style="text-align: center;"><button (click)="getvalue(name.value,email.value,contact.value)" style=" background-color: aqua; width: 50%; border-radius: 5px; margin: 10px; padding: 10px;">Register</button>
+    </div>
+
+  </div>
+
+  <div style="border: 1px solid black; border-radius: 10px;">
+    <h1 style="text-align: center;">Registered Data</h1>
+    
+    <p style="margin: 10px; padding: 10px;">Name:{{displayname}}</p>
+    <p style="margin: 10px;padding: 10px;">Email:{{displayemail}}</p>
+    <p style="margin: 10px; padding: 10px;">Contact:{{displaycontact}}</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+app.component.ts
+
+
+
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'Registration Form';
+
+  displayname=" ";
+  displayemail=" ";
+  displaycontact=" ";
+
+  getvalue(name:string,email:string,contact:string){
+    this.displayname=name;
+    this.displayemail=email;
+    this.displaycontact=contact;
+   
+  }
+
+}
+
+
+
+
+
+COMMANDS
+
+steps 
+open a folder in vs code
+npm --version    to check angular version 
+npm install -g @angular/cli@latest	   to install angular on systm    ignore if already installed
+ng new f_name        to create a new file 
+select css
+type yes
+it will create a file named f_name in which all tools are present
+open app.component.html file and delete all content in it
+then write code in it 
+then select app.component.ts and write code in it
+change directory to f_name   ( cd f_name)
+ng serve           to compile our program
+copy localhost link and paste on chrome it will open our site 
+write css in app.component.css
+
+
